@@ -3,40 +3,22 @@
 import urllib2
 import ast
 from flask import Flask, render_template, request, flash, redirect
-from contact_model import Contact
 
 app = Flask(__name__)
 app.secret_key = 'some_secret'
 app.debug = True
 
 @app.route(r"/", methods=["GET"])
-def contact_book():
-	contacts = Contact.query().fetch()
-	return render_template("contact_book.html", contacts=contacts)
+def home():
+	return render_template("index.html")
 
-@app.route(r"/add", methods=["GET", "POST"])
-def add_contact():
-	if request.form:
-		contact = Contact(name=request.form.get("name"),
-						  phone=request.form.get("phone"),
-						  email=request.form.get("email"))
-		contact.put()
-		flash("¡Se añadió el contacto!")
-	return render_template("add_contact.html")
+@app.route(r"/convert",methods=["GET"])
+def convert():
+	return render_template("convert.html")
 
-@app.route(r'/contacts/<uid>', methods=['GET'])
-def contact_details(uid):
-    contact = Contact.get_by_id(int(uid))
-    if not contact:
-        return redirect('/', code=301)
-
-    return render_template('contact.html', contact=contact)
-
-@app.route(r'/delete', methods=['POST'])
-def delete_contact():
-    contact = Contact.get_by_id(int(request.form.get('uid')))
-    contact.key.delete()
-    return redirect('/contacts/{}'.format(contact.key.id()))
+@app.route(r'/forecast', methods=['GET'])
+def forecast():
+    return render_template('forecast.html')
 
 def initial():
 	print("::::::::::::::::::::::::::::::::::::::")
@@ -47,11 +29,11 @@ def initial():
 	2) USD a MXN
 	3) MXN a JPY
 	4) JPY a MXN""")
-	valor = raw_input("->")
+	valor = input("->")
 	if valor != "1" and valor != "2" and valor != "3" and valor != "4":
 		print("¡Caracter no permitido!")
 	else:
-		ammount = int(raw_input("Cantidad a cambiar-> "))
+		ammount = int(input("Cantidad a cambiar-> "))
 		exchange(valor, ammount)
 
 def exchange(valor, ammount):

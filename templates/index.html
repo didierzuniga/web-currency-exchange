@@ -9,15 +9,35 @@
 </head>
 <body>
 	<div class="container">
-	  <div class="row">
-	   
-	    <div class="col-sm p-3 mb-2 bg-primary text-white">
-	      <header>Currency Exchange Online</header>
-	    </div>
-	   
+	  	<div class="row">
+		    <div class="col-sm p-3 mb-0 bg-primary text-white h2">
+		      <header>Currency Exchange Online</header>
+		    </div>
+		</div>
+		<div class="row">
+			<div class="col-sm p-1 mb-2 bg-primary text-white">
+				<nav>
+				    <ul class="nav nav-tabs justify-content-md-center" id="myTab" role="tablist">
+						<li class="nav-item">
+						    <a class="nav-link text-white bg-primary" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Convertir</a>
+						</li>
+						<li class="nav-item">
+						    <a class="nav-link text-white bg-primary" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Pronóstico</a>
+						</li>
+						<li class="nav-item">
+						    <a class="nav-link text-white bg-primary" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		    
+		</div>
+		<div class="row">
+			<section>
+				{% block section %}{% endblock %}
+			</section>
+		</div>
 	</div>
-	<button type="button" class="btn btn-primary">Convert</button>
-</div>
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
