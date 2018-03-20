@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from flask import Flask, render_template, request, flash, redirect
 import urllib2
 import ast
-from flask import Flask, render_template, request, flash, redirect
 
 app = Flask(__name__)
 app.secret_key = 'some_secret'

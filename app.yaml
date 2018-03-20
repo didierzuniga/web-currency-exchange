@@ -1,7 +1,5 @@
 service: default
-runtime: python
-runtime_config:
-  python_version: 3.5
+runtime: python27
 api_version: 1
 threadsafe: yes
 
@@ -9,3 +7,16 @@ handlers:
 - url: .*
   script: main.app
   secure: always
+
+
+# service: default
+# runtime: python
+# runtime_config:
+#   python_version: 3.5
+# api_version: 1
+# threadsafe: yes
+
+# handlers:
+# - url: .*
+#   script: main.app
+#   secure: always
