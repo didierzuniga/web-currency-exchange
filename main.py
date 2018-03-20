@@ -12,7 +12,7 @@ app.debug = True
 def home():
 	return render_template("index.html")
 
-@app.route(r"/convert",methods=["GET"])
+@app.route(r"/convert", methods=["GET", "POST"])
 def convert():
 	return render_template("convert.html")
 
