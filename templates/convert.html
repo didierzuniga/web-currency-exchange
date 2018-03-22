@@ -1,5 +1,16 @@
 {% extends "index.html" %}
 
 {% block section %}
-  <h3>Conversiones</h3>
+	<div class="dropdown show">
+		<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Exchange
+		</a>
+
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">MXN to USD</a>
+			<a class="dropdown-item" href="#">USD to MXN</a>
+			<a class="dropdown-item" href="#">MXN to JPY</a>
+			<a class="dropdown-item" href="#">JPY to MXN</a>
+		</div>
+	</div>
 {% endblock %}
